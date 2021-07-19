@@ -1,13 +1,4 @@
-<p>
-  I'm in a <em>view</em>!
-</p>
-
-<%= Time.now %>
-
-<ul>
-  <% [ 'Papillard', 'ssaunier' ].each do |username| %>
-    <li>
-      <%= username %>
-    </li>
-  <% end %>
-</ul>
+<h1>All Recipes</h1>
+<% @recipes.each do |recipe| %>
+  <%= recipe %>
+<% end %>
