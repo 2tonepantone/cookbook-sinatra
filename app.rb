@@ -27,3 +27,10 @@ post '/recipes/create' do
   cookbook.add_recipe(recipe)
   redirect to('/')
 end
+
+# localhost:4567/recipes/delete/1
+# params => { "id" => '1' }
+get '/recipes/delete/:id' do
+  cookbook.remove_recipe(params['id'].to_i)
+  redirect to('/')
+end

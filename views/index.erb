@@ -1,6 +1,8 @@
 <h1>All Recipes</h1>
-<% @recipes.each do |recipe| %>
-  <p><%= recipe %></p>
+<ol>
+<% @recipes.each.with_index do |recipe, i| %>
+  <li><%= recipe %> <a href="/recipes/delete/<%= i  %>">Delete</a></li>
 <% end %>
+</ol>
 
 <a href="/recipes/new">Add your own recipe</a>
