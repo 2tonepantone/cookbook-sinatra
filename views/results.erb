@@ -3,7 +3,7 @@
 <% @recipes.each.with_index do |recipe, i| %>
   <li>
     <%= recipe %>
-    <a href="/recipes/import<%= i %>">Import</a>
+    <a href="/recipes/import/<%= i %>">Import</a>
   </li>
 <% end %>
 </ol>
