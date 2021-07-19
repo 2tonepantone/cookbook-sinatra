@@ -1,0 +1,9 @@
+<h1>Recipes with <%= @keyword %></h1>
+<ol>
+<% @recipes.each.with_index do |recipe, i| %>
+  <li>
+    <%= recipe %>
+    <a href="/recipes/import<%= i %>">Import</a>
+  </li>
+<% end %>
+</ol>
