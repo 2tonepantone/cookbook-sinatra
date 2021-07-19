@@ -1,7 +1,15 @@
 <h1>All Recipes</h1>
 <ol>
 <% @recipes.each.with_index do |recipe, i| %>
-  <li><%= recipe %> <a href="/recipes/delete/<%= i  %>">Delete</a></li>
+  <li>
+    <%= recipe %>
+    <p>
+      <a href="/recipes/delete/<%= i  %>">Delete</a>
+      <a href="/recipes/complete/<%= i  %>">
+        <%= recipe.done? ? "Unmark done" : "Mark done" %>
+      </a>
+    </p>
+  </li>
 <% end %>
 </ol>
 

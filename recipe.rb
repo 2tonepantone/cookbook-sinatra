@@ -14,10 +14,11 @@ class Recipe
   end
 
   def mark_done!
-    @done = true
+    @done = !@done
   end
 
   def to_s
-    "#{name} - #{description} - #{prep_time} prep (#{rating} / 5.0)"
+    status = @done ? "☑️ " : ""
+    "#{status}#{name} - #{description} - #{prep_time} prep (#{rating} / 5.0)"
   end
 end

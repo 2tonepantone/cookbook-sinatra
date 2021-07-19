@@ -34,3 +34,8 @@ get '/recipes/delete/:id' do
   cookbook.remove_recipe(params['id'].to_i)
   redirect to('/')
 end
+
+get '/recipes/complete/:id' do
+  cookbook.mark_recipe_done(params['id'].to_i)
+  redirect to('/')
+end
