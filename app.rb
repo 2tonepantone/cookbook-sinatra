@@ -16,3 +16,14 @@ get '/' do
   @recipes = cookbook.all
   erb :index
 end
+
+get '/recipes/new' do
+  erb :new
+end
+
+post '/recipes/create' do
+  args = params.to_h.transform_keys(&:to_sym)
+  recipe = Recipe.new(**args)
+  cookbook.add_recipe(recipe)
+  redirect to('/')
+end

@@ -33,7 +33,11 @@ class Cookbook
 
   def read_csv
     CSV.foreach(@csv_file_path) do |recipe|
-      @recipes << Recipe.new(recipe[0], recipe[1], recipe[2], recipe[3], recipe[4] == 'true')
+      @recipes << Recipe.new(name: recipe[0],
+                             description: recipe[1],
+                             prep_time: recipe[2],
+                             rating: recipe[3],
+                             done: recipe[4] == 'true')
     end
   end
 

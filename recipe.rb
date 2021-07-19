@@ -1,7 +1,7 @@
 class Recipe
   attr_reader :name, :description, :prep_time, :rating, :done
 
-  def initialize(name, description, prep_time, rating, done = false)
+  def initialize(name:, description:, prep_time:, rating:, done: false)
     @name = name
     @description = description
     @rating = rating
